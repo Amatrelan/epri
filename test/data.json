@@ -1,0 +1,72 @@
+{
+  "deliveryDateCET": "2024-10-17",
+  "version": 3,
+  "updatedAt": "2024-10-16T11:24:39.1821423Z",
+  "deliveryAreas": [
+    "FI"
+  ],
+  "market": "DayAhead",
+  "multiAreaEntries": [
+    {
+      "deliveryStart": "2024-10-16T22:00:00Z",
+      "deliveryEnd": "2024-10-16T23:00:00Z",
+      "entryPerArea": {
+        "FI": 0.01
+      }
+    }
+  ],
+  "blockPriceAggregates": [
+    {
+      "blockName": "Off-peak 1",
+      "deliveryStart": "2024-10-16T22:00:00Z",
+      "deliveryEnd": "2024-10-17T06:00:00Z",
+      "averagePricePerArea": {
+        "FI": {
+          "average": 0.88,
+          "min": -0.01,
+          "max": 4.33
+        }
+      }
+    },
+    {
+      "blockName": "Peak",
+      "deliveryStart": "2024-10-17T06:00:00Z",
+      "deliveryEnd": "2024-10-17T18:00:00Z",
+      "averagePricePerArea": {
+        "FI": {
+          "average": 2.11,
+          "min": 0.00,
+          "max": 4.77
+        }
+      }
+    },
+    {
+      "blockName": "Off-peak 2",
+      "deliveryStart": "2024-10-17T18:00:00Z",
+      "deliveryEnd": "2024-10-17T22:00:00Z",
+      "averagePricePerArea": {
+        "FI": {
+          "average": -0.44,
+          "min": -1.08,
+          "max": -0.02
+        }
+      }
+    }
+  ],
+  "currency": "EUR",
+  "exchangeRate": 1,
+  "areaStates": [
+    {
+      "state": "Final",
+      "areas": [
+        "FI"
+      ]
+    }
+  ],
+  "areaAverages": [
+    {
+      "areaCode": "FI",
+      "price": 1.27
+    }
+  ]
+}
