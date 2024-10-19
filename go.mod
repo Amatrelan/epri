@@ -1,4 +1,4 @@
-module epri
+module github.com/Aamtrelan/epri
 
 go 1.22.7
 
