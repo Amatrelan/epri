@@ -4,7 +4,6 @@ import (
 	nord "epri/nordpool"
 	"fmt"
 	"log/slog"
-	"math"
 	"os"
 	"strings"
 	"time"
@@ -143,17 +142,4 @@ func loadConfig() {
 
 	os.MkdirAll(configPath(), os.ModePerm)
 	viper.SafeWriteConfig()
-}
-
-func roundTo(n float64, decimals uint32) float64 {
-	return math.Round(n*math.Pow(10, float64(decimals))) / math.Pow(10, float64(decimals))
-}
-
-func changeCalc(data *nord.NordPoolResponse, fn calc) {
-	for entry := range data.MultiAreaEntries {
-		dat := data.MultiAreaEntries[entry]
-		for k, v := range dat.EntryPerArea {
-			dat.EntryPerArea[k] = fn(v)
-		}
-	}
 }
