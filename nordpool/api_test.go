@@ -13,7 +13,12 @@ func TestGenerateUrl(t *testing.T) {
 	country := FI
 	currency := EUR
 
-	generated := getUrl(country, currency, "2024-10-13")
+	tdate, err := time.Parse("2006-01-02", "2024-10-13")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	generated := getUrl(country, currency, tdate)
 	want := "https://dataportal-api.nordpoolgroup.com/api/DayAheadPrices?market=DayAhead&deliveryArea=FI&currency=EUR&date=2024-10-13"
 
 	if generated != want {
