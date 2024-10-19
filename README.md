@@ -23,34 +23,34 @@ subunit = true
 tax = 25.5
 ```
 
-Currency possible values:
+`currency` possible values:
 
-- EUR
-- NOK
-- DKK
-- SEK
-- PLN
+- `EUR`
+- `NOK`
+- `DKK`
+- `SEK`
+- `PLN`
 
-Location possible values:
+`location` possible values:
 
-- FI
-- DK1
-- DK2
-- NO1
-- NO2
-- NO3
-- NO4
-- NO5
-- SE1
-- SE2
-- SE3
-- SE4
+- `FI`
+- `DK1`
+- `DK2`
+- `NO1`
+- `NO2`
+- `NO3`
+- `NO4`
+- `NO5`
+- `SE1`
+- `SE2`
+- `SE3`
+- `SE4`
 
-Subunit possible values:
+`subunit` possible values:
 with this you can manage will you show price in full unit, or in subunit (ex: Euro, or Cent)
 
-- true
-- false
+- `true`
+- `false`
 
-Tax:
+`tax`:
 You can add to this tax percentage.
