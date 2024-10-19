@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log/slog"
 	"os"
-	"strings"
+	"path"
 	"time"
 
 	"github.com/charmbracelet/bubbles/table"
@@ -14,7 +14,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-const CONFIG_FOLDER = "$XDG_CONFIG_HOME/epri"
+const CONFIG_FOLDER = "epri"
 
 type calc func(float64) float64
 
@@ -126,13 +126,27 @@ func fromNordPool(data nord.NordPoolResponse, tax float64) []table.Row {
 }
 
 func configPath() string {
-	return strings.ReplaceAll(CONFIG_FOLDER, "$XDG_CONFIG_HOME", os.Getenv("XDG_CONFIG_HOME"))
+	var configRoot string
+	envConfig := os.Getenv("EPRI_CONFIG")
+
+	if len(envConfig) > 0 {
+		return envConfig
+	}
+
+	configHome := os.Getenv("XDG_CONFIG_HOME")
+	if len(configHome) > 0 {
+		configRoot = os.Getenv("XDG_CONFIG_HOME")
+	} else {
+		configRoot = os.Getenv("HOME")
+	}
+
+	return path.Join(configRoot, CONFIG_FOLDER)
 }
 
 func loadConfig() {
 	viper.SetConfigName("config")
 	viper.SetConfigType("toml")
-	viper.AddConfigPath(CONFIG_FOLDER)
+	viper.AddConfigPath(configPath())
 	viper.AddConfigPath(".")
 	viper.SetDefault("location", nord.FI)
 	viper.SetDefault("currency", nord.EUR)
