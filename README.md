@@ -47,6 +47,7 @@ tax = 25.5
 - `SE4`
 
 `subunit` possible values:
+
 with this you can manage will you show price in full unit, or in subunit (ex: Euro, or Cent)
 
 - `true`
