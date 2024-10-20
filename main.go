@@ -1,12 +1,13 @@
 package main
 
 import (
-	nord "epri/nordpool"
 	"fmt"
 	"log/slog"
 	"os"
 	"path"
 	"time"
+
+	nord "github.com/Amatrelan/epri/nordpool"
 
 	"github.com/charmbracelet/bubbles/table"
 	tea "github.com/charmbracelet/bubbletea"

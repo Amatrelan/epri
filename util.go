@@ -2,9 +2,10 @@ package main
 
 import (
 	"encoding/json"
-	nord "epri/nordpool"
 	"fmt"
 	"math"
+
+	nord "github.com/Amatrelan/epri/nordpool"
 )
 
 func PrettyPrint[K any](data K) {
